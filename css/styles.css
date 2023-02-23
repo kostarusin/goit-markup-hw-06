@@ -618,6 +618,8 @@ body {
   background-color: #31d0aa;
 }
 
+/* -----------Modal window------------ */
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -664,5 +666,127 @@ body {
   justify-content: center;
   align-items: center;
   margin-left: auto;
+  margin-bottom: 24px;
   padding: 0;
+}
+
+.form-titel {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.form-list {
+  width: 360px;
+}
+
+.form-list-element {
+  position: relative;
+}
+
+.form-list-icon {
+  position: absolute;
+  display: block;
+  top: 0;
+}
+
+.form-list-label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+
+.form-list-input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 8px;
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #434455;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.form-list-comment {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 16px;
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #434455;
+  padding-left: 16px;
+  padding-top: 8px;
+  background-color: #fcfcfc;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.form-list-comment::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.form-list-checkbox :checked form-accept-wrap::before {
+  background: #404bbf;
+  border: none;
+}
+
+.form-accept-wrap {
+  margin-bottom: 24px;
+  height: 16px;
+}
+
+.form-accept-text::before {
+  content: '';
+  display: inline-block;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid #2e2f42;
+  border-radius: 2px;
+  margin-right: 8px;
+}
+
+.form-list-checkbox:checked + .form-accept-text::before {
+  background: #404bbf;
+  border: none;
+  border-radius: 2px;
+  background-image: url(../images/vector.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-accept-text {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #757575;
+}
+
+.form-accept-link {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #4d5ae5;
+}
+
+.form-list-btn {
+  display: block;
+  margin: auto;
 }
