@@ -15,6 +15,8 @@
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --work-prop-transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --work-prop-card-wrap: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --icons-fill: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --modal-border-color: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 p,
@@ -71,7 +73,6 @@ img {
   padding-right: 15px;
   padding-left: 15px;
   margin: 0 auto;
-  /* outline: 2px solid red; */
 }
 
 body {
@@ -618,6 +619,34 @@ body {
   background-color: #31d0aa;
 }
 
+.subscribe-thumb {
+  width: 453px;
+  margin-left: auto;
+}
+
+.subscribe-titel {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  padding-bottom: 16px;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: space-between;
+}
+.subscribe-input {
+  width: 264px;
+  height: 40px;
+}
+
+.subscribe-btn {
+  width: 165px;
+  height: 40px;
+}
+
 /* -----------Modal window------------ */
 
 .backdrop {
@@ -668,11 +697,11 @@ body {
   margin-left: auto;
   margin-bottom: 24px;
   padding: 0;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--social-link-transition);
 }
 
 .modal-order-close-icon {
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--icons-fill);
 }
 
 .modal-order-close-btn:is(:hover, :focus) {
@@ -717,7 +746,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   fill: #2e2f42;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--icons-fill);
 }
 
 .form-list-input {
@@ -733,7 +762,7 @@ body {
   background-color: #fcfcfc;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--modal-border-color);
 }
 
 .form-list-input:focus {
@@ -754,14 +783,13 @@ body {
   line-height: 1.33;
   letter-spacing: 0.04em;
   color: #434455;
-  padding-left: 16px;
-  padding-top: 8px;
+  padding: 8px 16px;
   outline: none;
   background-color: #fcfcfc;
   resize: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--modal-border-color);
 }
 
 .form-list-comment:focus {
@@ -772,52 +800,58 @@ body {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form-list-checkbox :checked form-accept-wrap::before {
+.form-list-checkbox :checked: .form-accept-text span {
   background: #404bbf;
   border: none;
 }
 
 .form-accept-wrap {
   margin-bottom: 24px;
-  height: 16px;
 }
 
-.form-accept-text::before {
-  content: '';
+.form-accept-text .checkbox-icon-wrap {
   display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   width: 16px;
   height: 16px;
   border: 1.25px solid #2e2f42;
   border-radius: 2px;
   margin-right: 8px;
+  fill: transparent;
+  transition: var(--social-link-transition);
+  transition: var(--modal-border-color);
 }
 
-.form-list-checkbox:checked + .form-accept-text::before {
-  background: #404bbf;
+.checkbox-icon {
+  transition: var(--icons-fill);
+}
+
+.form-list-checkbox:checked + .form-accept-text .checkbox-icon-wrap {
+  background-color: #404bbf;
   border: none;
   border-radius: 2px;
-  background-image: url(../images/vector.svg);
-  background-repeat: no-repeat;
-  background-position: center;
+  fill: #f4f4fd;
 }
 
 .form-accept-text {
-  display: inline-block;
-  font-weight: 400;
+  height: 16px;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.04em;
   color: #757575;
+  display: flex;
+  align-items: center;
 }
 
 .form-accept-link {
-  display: inline-block;
-  font-weight: 400;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.04em;
   color: #4d5ae5;
+  padding-left: 4px;
 }
 
 .form-list-btn {
@@ -835,7 +869,7 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--social-link-transition);
 }
 
 .form-list-btn:is(:hover, :focus) {
