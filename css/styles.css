@@ -7,16 +7,17 @@
   --our-team-background-color: #f4f4fd;
   --footer-background-color: #2e2f42;
   --header-link-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --social-link-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --customers-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --work-proposal-filter-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --work-prop-transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --work-prop-card-wrap: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* easy&ready  */
   --icons-fill: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --modal-border-color: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --brdr-clr: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transform: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --bckgrnd-clr-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 p,
@@ -362,7 +363,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #4d5ae5;
-  transition: var(--social-link-transition);
+  transition: var(--bckgrnd-clr-transition);
 }
 
 .our-team-soc-link:is(:hover, :focus) {
@@ -503,7 +504,7 @@ body {
   color: #f4f4fd;
   background-color: #4d5ae5;
   padding: 40px 32px 164px;
-  transition: var(--work-prop-card-wrap);
+  transition: var(--transform);
   transform: translateY(100%);
 }
 
@@ -612,7 +613,7 @@ body {
   justify-content: center;
   align-items: center;
   fill: #f4f4fd;
-  transition: var(--social-link-transition);
+  transition: var(--bckgrnd-clr-transition);
 }
 
 .social-media-link:is(:hover, :focus) {
@@ -638,13 +639,54 @@ body {
   justify-content: space-between;
 }
 .subscribe-input {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.6);
   width: 264px;
   height: 40px;
+  padding-left: 16px;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+
+.subscribe-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.subscribe-input:is(:hover, :focus) {
 }
 
 .subscribe-btn {
   width: 165px;
   height: 40px;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  border: none;
+  background-color: #4d5ae5;
+  border-radius: 4px;
+  transition: var(--bckgrnd-clr-transition);
+}
+
+.subscribe-btn-icon {
+  fill: #ffffff;
+}
+
+.subscribe-btn:is(:hover, :focus) {
+  background-color: #404bbf;
 }
 
 /* -----------Modal window------------ */
@@ -697,7 +739,7 @@ body {
   margin-left: auto;
   margin-bottom: 24px;
   padding: 0;
-  transition: var(--social-link-transition);
+  transition: var(--bckgrnd-clr-transition);
 }
 
 .modal-order-close-icon {
@@ -762,14 +804,14 @@ body {
   background-color: #fcfcfc;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  transition: var(--modal-border-color);
+  transition: var(--brdr-clr);
 }
 
-.form-list-input:focus {
+.form-list-input:is(:hover, :focus) {
   border-color: #4d5ae5;
 }
 
-.form-list-input:focus + .form-input-icon {
+.form-list-input:is(:hover, :focus) + .form-input-icon {
   fill: #4d5ae5;
 }
 
@@ -778,21 +820,19 @@ body {
   height: 120px;
   margin-bottom: 16px;
   margin-top: 4px;
-  font-weight: 400;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.04em;
-  color: #434455;
   padding: 8px 16px;
   outline: none;
   background-color: #fcfcfc;
   resize: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  transition: var(--modal-border-color);
+  transition: var(--brdr-clr);
 }
 
-.form-list-comment:focus {
+.form-list-comment:is(:hover, :focus) {
   border-color: #4d5ae5;
 }
 
@@ -821,8 +861,8 @@ body {
   border-radius: 2px;
   margin-right: 8px;
   fill: transparent;
-  transition: var(--social-link-transition);
-  transition: var(--modal-border-color);
+  transition: var(--bckgrnd-clr-transition);
+  transition: var(--brdr-clr);
 }
 
 .checkbox-icon {
@@ -869,7 +909,7 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
-  transition: var(--social-link-transition);
+  transition: var(--bckgrnd-clr-transition);
 }
 
 .form-list-btn:is(:hover, :focus) {
