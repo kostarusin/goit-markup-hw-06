@@ -657,9 +657,6 @@ body {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.subscribe-input:is(:hover, :focus) {
-}
-
 .subscribe-btn {
   width: 165px;
   height: 40px;
@@ -837,7 +834,7 @@ body {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form-list-checkbox :checked: .form-accept-text span {
+.form-list-checkbox :checked .form-accept-text span {
   background: #404bbf;
   border: none;
 }
